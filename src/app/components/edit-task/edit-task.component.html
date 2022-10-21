@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header text-bg-dark"><h5>Update task</h5></div>
+  <div class="card-body">
+    <div class="mb-3">
+      <label class="form-label">Name of the task</label>
+      <input type="text" class="form-control" [(ngModel)]="text">
+    </div>
+    <div class="mb-3">
+      <label class="form-label mx-1">Type of the task</label>
+
+      <select [(ngModel)]="type">
+
+        <option disabled value="">choose type</option>
+
+        <option *ngFor="let type of types" >{{type}}</option>
+
+      </select>
+
+    </div>
+    <button class="btn btn-warning" (click)="update()" [disabled]="text==null || type==null">Update</button>
+  </div>
+
+</div>

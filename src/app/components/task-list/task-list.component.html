@@ -1,0 +1,20 @@
+<div class="card">
+  <div class="card-header text-bg-dark"><h5>Task list</h5></div>
+  <div class="card-body">
+    <div>
+      <ul class="list-group"  >
+        <li *ngFor="let task of tasks; let i=index" class="list-group-item">
+          <div class="row">
+            <div class="col-md-6">{{ i+1 }}. {{ task.text }}</div>
+            <div class="col-md-3">{{ task.type }}</div>
+            <div class="col-md-3">
+              <a [routerLink]="['/edit',i]" class="btn btn-success">Edit</a>&nbsp;
+              <button class="btn btn-danger" (click)="delete(i)" >X</button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <app-task-details></app-task-details>
+</div>
