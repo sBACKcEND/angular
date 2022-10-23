@@ -1,8 +1,8 @@
 <div class="card mt-4">
   <div class="card-body">
-    # of tasks: {{ count }} <br>
+    # OF TASKS: {{ count }} <br>
     <div *ngFor="let type of types" class="list-group-item">
-      {{ type }} {{ calculate(type) }}
+      {{ type }}: {{ calculate(type) }}
     </div>
   </div>
 </div>
