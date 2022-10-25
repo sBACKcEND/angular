@@ -11,13 +11,18 @@ import { EditTaskComponent } from './components/edit-task/edit-task.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { TaskDetailsComponent } from './components/task-details/task-details.component';
 import {RouterModule, Routes} from "@angular/router";
+import { JokeComponent } from './components/joke/joke.component';
+import {HttpClientModule} from "@angular/common/http";
+import { ExchangeComponent } from './components/exchange/exchange.component';
 
 const appRoutes:Routes=[
   {path:"", component:TaskListComponent},
   {path:"new", component:NewTaskComponent},
   {path:"rezervuaras", component:RezervuarasComponent},
   {path:"about", component:AboutComponent},
-  {path:"edit/:id", component:EditTaskComponent}
+  {path:"edit/:id", component:EditTaskComponent},
+  {path:"joke", component:JokeComponent},
+  {path:"exchange", component:ExchangeComponent}
 ]
 
 @NgModule({
@@ -29,12 +34,15 @@ const appRoutes:Routes=[
     AboutComponent,
     EditTaskComponent,
     NavBarComponent,
-    TaskDetailsComponent
+    TaskDetailsComponent,
+    JokeComponent,
+    ExchangeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
